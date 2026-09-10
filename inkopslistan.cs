@@ -10,12 +10,32 @@ while (true)
         Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} kr");
     }
 
-    Console.Write("\nSkriv in varunamn: ");
+    Console.Write("\nSkriv in varunamn (eller varans nummer för att ta bort): ");
     string inputName = Console.ReadLine();
 
-    Console.Write("Skriv in pris i heltal: ");
-    int inputPrice = int.Parse(Console.ReadLine());
+    if (int.TryParse(inputName, out int removeIndex))
+    {
+        int actualIndex = removeIndex - 1;
 
-    names.Add(inputName);
-    prices.Add(inputPrice);
+        if (actualIndex >= 0 && actualIndex < names.Count)
+        {
+            names.RemoveAt(actualIndex);
+            prices.RemoveAt(actualIndex);
+            Console.WriteLine("Varan har tagits bort!");
+        }
+        else
+        {
+            Console.WriteLine("Ogiltigt nummer.");
+        }
+    }
+
+    else
+    {
+        Console.Write("Skriv in pris i heltal: ");
+        int inputPrice = int.Parse(Console.ReadLine());
+        
+        names.Add(inputName);
+        prices.Add(inputPrice);
+    }
+
 }
