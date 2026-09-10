@@ -10,6 +10,13 @@ while (true)
         Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} kr");
     }
 
+    int totalPrice = 0;
+    foreach (int price in prices)
+    {
+        totalPrice += price;
+    }
+    Console.WriteLine($"\nTotalbelopp: {totalPrice} kr");
+
     if (names.Count > 0)
     {
         int highestPrice = prices[0];
