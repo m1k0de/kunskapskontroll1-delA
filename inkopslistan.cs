@@ -10,6 +10,23 @@ while (true)
         Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} kr");
     }
 
+    if (names.Count > 0)
+    {
+        int highestPrice = prices[0];
+        string mostExpensiveName = names[0];
+        
+        for (int i = 1; i < prices.Count; i++)
+        {
+            if (prices[i] > highestPrice)
+            {
+                highestPrice = prices[i];
+                mostExpensiveName = names[i];
+            }
+        }
+
+        Console.WriteLine($"\nDyrast just nu är: {mostExpensiveName} {highestPrice} kr");
+    }
+
     Console.Write("\nSkriv in varunamn (eller varans nummer för att ta bort): ");
     string inputName = Console.ReadLine();
 
