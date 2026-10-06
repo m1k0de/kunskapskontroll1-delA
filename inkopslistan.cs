@@ -6,12 +6,13 @@ List<int> prices = new List<int>();
 
 while (true)
 {
-    Console.WriteLine("\nINKÖPSLISTA");
+    Console.WriteLine("\n===INKÖPSLISTA===");
+    Console.WriteLine();
     for (int i = 0; i < names.Count; i++)
     {
         Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} kr");
     }
-
+    Console.WriteLine("|Instruktioner|\n*Skriv varans nummer för att ta bort\n*Skriv 'dyrast' för att se dyrast vara");
     int totalPrice = 0;
     foreach (int price in prices)
     {
@@ -21,7 +22,8 @@ while (true)
 
 
 
-    Console.Write("\nSkriv in varunamn (eller varans nummer för att ta bort): ");
+    Console.Write("\nSkriv in varunamn:");
+
     string inputName = Console.ReadLine();
 
     if (inputName == "dyrast")
