@@ -55,6 +55,8 @@ while (true)
 
     else
     {
+        Console.Write("Skriv in ditt pris i heltal: ");
+        
         if (int.TryParse(Console.ReadLine(), out int inputPrice))
         {
             names.Add(inputName);
