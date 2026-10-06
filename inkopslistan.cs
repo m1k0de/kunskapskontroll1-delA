@@ -7,7 +7,7 @@ List<int> prices = new List<int>();
 while (true)
 {
     Console.WriteLine("\n===INKÖPSLISTA===");
-    Console.WriteLine();
+    
     for (int i = 0; i < names.Count; i++)
     {
         Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} kr");
@@ -20,9 +20,9 @@ while (true)
     }
     Console.WriteLine($"\nTotalbelopp: {totalPrice} kr");
 
-    Console.WriteLine("\n|Instruktioner|\n*Skriv varans nummer för att ta bort\n*Skriv 'dyrast' för att se dyrast vara");
+    Console.WriteLine("\n|Instruktioner|");
 
-    Console.Write("\nSkriv in varunamn:");
+    Console.Write("Skriv in varunamn eller skriv varans nummer för att ta bort eller skriv 'dyrast' för att se dyrast vara:\n");
     string inputName = Console.ReadLine();
 
     if (inputName == "dyrast")
