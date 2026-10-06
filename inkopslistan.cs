@@ -1,4 +1,4 @@
-using System.Formats.Asn1;
+
 
 List<string> names = new List<string>();
 
@@ -12,7 +12,7 @@ while (true)
     {
         Console.WriteLine($"{i + 1}. {names[i]} - {prices[i]} kr");
     }
-    Console.WriteLine("|Instruktioner|\n*Skriv varans nummer för att ta bort\n*Skriv 'dyrast' för att se dyrast vara");
+
     int totalPrice = 0;
     foreach (int price in prices)
     {
@@ -20,10 +20,9 @@ while (true)
     }
     Console.WriteLine($"\nTotalbelopp: {totalPrice} kr");
 
-
+    Console.WriteLine("\n|Instruktioner|\n*Skriv varans nummer för att ta bort\n*Skriv 'dyrast' för att se dyrast vara");
 
     Console.Write("\nSkriv in varunamn:");
-
     string inputName = Console.ReadLine();
 
     if (inputName == "dyrast")
@@ -32,17 +31,17 @@ while (true)
         {
             int highestPrice = prices[0];
             string mostExpensiveName = names[0];
-        
+
             for (int i = 1; i < prices.Count; i++)
             {
                 if (prices[i] > highestPrice)
                 {
-                highestPrice = prices[i];
-                mostExpensiveName = names[i];
+                    highestPrice = prices[i];
+                    mostExpensiveName = names[i];
                 }
             }
 
-        Console.WriteLine($"\nDyrast just nu är: {mostExpensiveName} {highestPrice} kr");
+            Console.WriteLine($"\nDyrast just nu är: {mostExpensiveName} {highestPrice} kr");
     }
 
         else
