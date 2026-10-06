@@ -55,11 +55,14 @@ while (true)
 
     else
     {
-        Console.Write("Skriv in pris i heltal: ");
-        int inputPrice = int.Parse(Console.ReadLine());
-        
-        names.Add(inputName);
-        prices.Add(inputPrice);
+        if (int.TryParse(Console.ReadLine(), out int inputPrice))
+        {
+            names.Add(inputName);
+            prices.Add(inputPrice);
+        }
+        else
+        {
+            Console.WriteLine("Ogiltigt pris. Varan lades inte till.");
+        }
     }
-
 }
